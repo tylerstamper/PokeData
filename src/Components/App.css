@@ -1,0 +1,107 @@
+html, body{
+    box-sizing: border-box;
+}
+#root{
+    margin: 100px;
+}
+.paginated-list-container{
+    height: 50px;
+    width: 150px;
+    background-color: coral;
+}
+.paginated-list-name{
+    margin: 0;
+    line-height: 50px;
+    cursor: pointer;
+}
+.paginate-button-container{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+.paginate-button{
+    height: 35px;
+    width: 75px;
+    margin: 0 5px;
+}
+.flex-pagination-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.h1-title{
+ text-align: center;
+}
+.form-container{
+    text-align: center;
+    margin: 20px 0;
+}
+.form-input{
+    height: 35px;
+    width: 250px;
+}
+.form-input, ::placeholder{
+    color: black;
+    opacity: 80%;
+    padding: 0 5px;
+}
+
+/* -- error styles -- */
+.error-div{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.error-back-btn{
+    color: white;
+    border: none;
+    border-radius: 2px;
+    background-color: darkslategrey;
+    height: 30px;
+    width: 80px;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);
+}
+.error-back-btn:active{
+    box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.5);
+}
+.error-p span{
+    text-decoration: underline;
+}
+.error-img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px){
+    .flex-pagination-container{
+        width: 80%;
+    }
+    .paginated-list-container{
+        width: 100px;
+        height: 40px;
+    }
+    #root{
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .flex-pagination-container{
+        width: 90%;
+    }
+    .paginated-list-container{
+        width: 125px;
+        height: 50px;
+    }
+    #root{
+        margin: 20px;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .flex-pagination-container{
+        width: 70%;
+    }
+}
