@@ -22,6 +22,7 @@ function App(){
                 setData(response.data);
                 setShowing('table');
                 console.log('setData with axios');
+                
             })
             .catch(function(error){
                 console.log(error);
@@ -95,6 +96,7 @@ function App(){
                 <div className='flex-pagination-container'>
                     {data && data.results.map(item => 
                         <div key={item.name} className='paginated-list-container' onClick={e => fetchIndividualData(e.target.id)}>
+                            <img className='pokemon-sprite' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.url.substr(33).replaceAll("/", "")}.png`}/>
                             <p id={item.name} className='paginated-list-name'>{item.name}</p>
                         </div>
                     )}

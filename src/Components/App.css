@@ -1,13 +1,14 @@
 html, body{
     box-sizing: border-box;
 }
-#root{
-    margin: 100px;
-}
 .paginated-list-container{
-    height: 50px;
+    height: auto;
     width: 150px;
     background-color: coral;
+    border-radius: 5px;
+}
+.paginated-list-container:hover{
+    box-shadow: 0px 2px 15px 1px #000000;
 }
 .paginated-list-name{
     margin: 0;
