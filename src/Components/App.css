@@ -1,19 +1,20 @@
 html, body{
     box-sizing: border-box;
+    background-color: #FB1B1B;
 }
 .paginated-list-container{
     height: auto;
     width: 150px;
-    background-color: coral;
+    background-color: #DFDFDF;
     border-radius: 5px;
 }
 .paginated-list-container:hover{
     box-shadow: 0px 2px 15px 1px #000000;
+    cursor: pointer;
 }
 .paginated-list-name{
     margin: 0;
     line-height: 50px;
-    cursor: pointer;
 }
 .paginate-button-container{
     width: 100%;
@@ -24,6 +25,9 @@ html, body{
     height: 35px;
     width: 75px;
     margin: 0 5px;
+    border: none;
+    border-radius: 1rem;
+    background-color: #DFDFDF;
 }
 .flex-pagination-container{
     display: flex;
@@ -31,17 +35,25 @@ html, body{
     justify-content: center;
     gap: 10px;
     text-align: center;
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
 .h1-title{
- text-align: center;
+    font-size: 4rem;
+    text-align: center;
+    color: #D5A100;
+    background: linear-gradient(90deg, rgba(10,40,95,1) 37%, rgba(0,117,190,1) 73%);
+    background-clip: text;
+    -webkit-text-stroke: 0.5rem transparent;
 }
 .form-container{
     text-align: center;
     margin: 20px 0;
 }
 .form-input{
+    border-radius: 2rem;
+    border: none;
+    padding: 0.5rem 2rem;
     height: 35px;
     width: 250px;
 }
@@ -78,7 +90,7 @@ html, body{
 
 @media only screen and (max-width: 600px){
     .flex-pagination-container{
-        width: 80%;
+
     }
     .paginated-list-container{
         width: 100px;
@@ -91,11 +103,10 @@ html, body{
 
 @media only screen and (max-width: 768px){
     .flex-pagination-container{
-        width: 90%;
+        
     }
     .paginated-list-container{
-        width: 125px;
-        height: 50px;
+        height: auto;
     }
     #root{
         margin: 20px;
@@ -103,6 +114,6 @@ html, body{
 }
 @media only screen and (max-width: 1200px){
     .flex-pagination-container{
-        width: 70%;
+        
     }
 }

@@ -1,4 +1,4 @@
-import {  React,useState } from "react";
+import {  React,useEffect,useState } from "react";
 import Axios from 'axios';
 import './Pokemon.css';
 
@@ -12,25 +12,35 @@ function Pokemon(props){
     const [showingMoves, setShowingMoves] = useState(false);
     const [move, setMove] = useState();
     const [showingModal, setShowingModal] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        if(props ===  null){
+            setIsLoading(true);
+        }
+        else{
+            setIsLoading(false);
+        }
+    }, [props])
 
     //very slow need to make faster
     const toggleGender = () => {
-        if(viewingMale && viewingShiny){
-            setViewingMale(false);
-            setSprite(props.sprites.front_shiny_female);
-        }
-        else if(viewingMale && !viewingShiny){
-            setViewingMale(false);
-            setSprite(props.sprites.front_female);
-        }
-        else if(!viewingMale && viewingShiny){
-            setViewingMale(true);
-            setSprite(props.sprites.front_shiny);
-        }
-        else if(!viewingMale && !viewingShiny){
-            setViewingMale(true);
-            setSprite(props.sprites.front_default);
-        }
+            if(viewingMale && viewingShiny){
+                setViewingMale(false);
+                setSprite(props.sprites.front_shiny_female);
+            }
+            else if(viewingMale && !viewingShiny){
+                setViewingMale(false);
+                setSprite(props.sprites.front_female);
+            }
+            else if(!viewingMale && viewingShiny){
+                setViewingMale(true);
+                setSprite(props.sprites.front_shiny);
+            }
+            if(!viewingMale && !viewingShiny){
+                setViewingMale(true);
+                setSprite(props.sprites.front_default);
+            }
     }
     //very slow need to make faster
     const toggleShiny = () => {
@@ -93,6 +103,7 @@ function Pokemon(props){
         }
     }
 
+    if(!isLoading){
     return(
         <div className='pokemon-container-div'>
 
@@ -152,6 +163,10 @@ function Pokemon(props){
             </div>
         </div>
     );
+    }
+    else{
+        <h1>Loading some PokeData...</h1>
+    }
 }
 
 export default Pokemon;

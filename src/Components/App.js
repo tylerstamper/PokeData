@@ -8,8 +8,8 @@ function App(){
     const [query, setQuery] = useState();
     const [data, setData] = useState();
     const [individualData, setIndividualData] = useState();
-    const [showing, setShowing] = useState('table');
     const [page, setPage] = useState(1);
+    const [showing, setShowing] = useState('table');
 
     useEffect(() => {
         fetchData();
@@ -20,7 +20,6 @@ function App(){
             Axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20`)
             .then(function(response){
                 setData(response.data);
-                setShowing('table');
                 console.log('setData with axios');
                 
             })
@@ -51,12 +50,11 @@ function App(){
             })
         }
         else{
-            setShowing('table');
+            setShowing('table')
         }
     }
 
     const fetchIndividualData = (query) => {
-        setShowing('loading');
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${query}`)
         .then(function(response){
             setIndividualData(response.data);
@@ -68,7 +66,6 @@ function App(){
     }
 
     const changeState = () => {
-        setShowing('loading');
         fetchData();
     }
 
@@ -95,8 +92,8 @@ function App(){
     
                 <div className='flex-pagination-container'>
                     {data && data.results.map(item => 
-                        <div key={item.name} className='paginated-list-container' onClick={e => fetchIndividualData(e.target.id)}>
-                            <img className='pokemon-sprite' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.url.substr(33).replaceAll("/", "")}.png`}/>
+                        <div id={item.name} key={item.name} className='paginated-list-container' onClick={e => fetchIndividualData(e.target.id)}>
+                            <img id={item.name} className='pokemon-sprite' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.url.substr(33).replaceAll("/", "")}.png`}/>
                             <p id={item.name} className='paginated-list-name'>{item.name}</p>
                         </div>
                     )}
@@ -105,13 +102,6 @@ function App(){
                     <button className='paginate-button' onClick={e => fetchData('left')} disabled={page === 1 ? true : false}>Previous</button>
                     <button className='paginate-button' onClick={e => fetchData('right')}>Next</button>
                 </div>
-            </>
-        );
-    } else if(showing === 'loading'){
-        return(
-            <>
-            <h1>Loading...</h1>
-            <h3>Some Poke-Data</h3>
             </>
         );
     } else if(data && showing === 'pokemon'){
@@ -124,7 +114,7 @@ function App(){
                 </form>
     
     
-                <Pokemon {...individualData} changeState={changeState}/>
+                <Pokemon {...individualData} changeState={changeState} setShowing={setShowing}/>
             </>
         );
     } else if(showing === 'error'){

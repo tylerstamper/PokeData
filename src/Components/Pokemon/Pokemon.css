@@ -75,10 +75,10 @@
     border-radius: 15px;
     box-shadow: inset 0px 0px 8px 1px rgba(0,0,0,0.5);
     margin: 0 10px;
-    background-color: coral;
+    background-color: #FFFFFF;
 }
 .pokemon-stats-container{
-    background-color: lightskyblue;
+    background-color: #1C4CBD;
     width: 50%;
     border-radius: 15px;
     box-shadow: inset 0px 0px 8px 1px rgba(0,0,0,0.5);
@@ -100,8 +100,8 @@
     width: 50%;
 }
 .ability-btn{
-    color: white;
-    background-color: darkslategrey;
+    color: black;
+    background-color: #DFDFDF;
     border-radius: 2px;
     border: none;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);
@@ -123,11 +123,11 @@
     border: solid black 1px;
     border-radius: 2px;
     margin: 0px auto 20px auto;
-    background-color: burlywood;
+    background-color: #E54222;
 }
 .toggle-btn{
-    color: white;
-    background-color: darkslategrey;
+    color: black;
+    background-color: #DFDFDF;
     border-radius: 2px;
     border: none;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);
@@ -139,10 +139,10 @@
     box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.5);
 }
 .back-btn{
-    color: white;
+    color: black;
     border: none;
     border-radius: 2px;
-    background-color: darkslategrey;
+    background-color: #DFDFDF;
     height: 30px;
     width: 30px;
     position: absolute;
@@ -179,7 +179,6 @@ button:hover, input:hover{
 /* -- drop down menu -- */
 
 .dropdown-div{
-    background-color: coral;
     width: 90%;
     border-radius: 5px;
     margin: auto;
@@ -196,7 +195,7 @@ button:hover, input:hover{
 .dropdown-item{
     list-style: none;
     cursor: pointer;
-    background-color: darkslategray !important; 
+    background-color: #1C4CBD; 
     margin: 5px;
     height: 30px;
     color: white;
